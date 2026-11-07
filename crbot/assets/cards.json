@@ -1,0 +1,877 @@
+{
+ "archer_queen": {
+  "cost": 5,
+  "id": 26000072,
+  "target_anywhere": false,
+  "units": [
+   "archer_queen"
+  ]
+ },
+ "archers": {
+  "cost": 3,
+  "id": 26000001,
+  "target_anywhere": false,
+  "units": [
+   "archer"
+  ]
+ },
+ "arrows": {
+  "cost": 3,
+  "id": 28000001,
+  "target_anywhere": true,
+  "units": []
+ },
+ "baby_dragon": {
+  "cost": 4,
+  "id": 26000015,
+  "target_anywhere": false,
+  "units": [
+   "baby_dragon"
+  ]
+ },
+ "balloon": {
+  "cost": 5,
+  "id": 26000006,
+  "target_anywhere": false,
+  "units": [
+   "balloon"
+  ]
+ },
+ "bandit": {
+  "cost": 3,
+  "id": 26000046,
+  "target_anywhere": false,
+  "units": [
+   "bandit"
+  ]
+ },
+ "barbarian_barrel": {
+  "cost": 2,
+  "id": 28000015,
+  "target_anywhere": true,
+  "units": [
+   "barbarian"
+  ]
+ },
+ "barbarian_hut": {
+  "cost": 7,
+  "id": 27000005,
+  "target_anywhere": false,
+  "units": [
+   "barbarian_hut",
+   "barbarian"
+  ]
+ },
+ "barbarians": {
+  "cost": 5,
+  "id": 26000008,
+  "target_anywhere": false,
+  "units": [
+   "barbarian"
+  ]
+ },
+ "bats": {
+  "cost": 2,
+  "id": 26000049,
+  "target_anywhere": false,
+  "units": [
+   "bat"
+  ]
+ },
+ "battle_healer": {
+  "cost": 4,
+  "id": 26000068,
+  "target_anywhere": false,
+  "units": [
+   "battle_healer"
+  ]
+ },
+ "battle_ram": {
+  "cost": 4,
+  "id": 26000036,
+  "target_anywhere": false,
+  "units": [
+   "battle_ram"
+  ]
+ },
+ "blank": {
+  "cost": 11,
+  "id": -1,
+  "target_anywhere": false,
+  "units": []
+ },
+ "bomb_tower": {
+  "cost": 4,
+  "id": 27000004,
+  "target_anywhere": false,
+  "units": [
+   "bomb_tower"
+  ]
+ },
+ "bomber": {
+  "cost": 2,
+  "id": 26000013,
+  "target_anywhere": false,
+  "units": [
+   "bomber"
+  ]
+ },
+ "bowler": {
+  "cost": 5,
+  "id": 26000034,
+  "target_anywhere": false,
+  "units": [
+   "bowler"
+  ]
+ },
+ "cannon": {
+  "cost": 3,
+  "id": 27000000,
+  "target_anywhere": false,
+  "units": [
+   "cannon"
+  ]
+ },
+ "cannon_cart": {
+  "cost": 5,
+  "id": 26000054,
+  "target_anywhere": false,
+  "units": [
+   "cannon_cart"
+  ]
+ },
+ "clone": {
+  "cost": 3,
+  "id": 28000013,
+  "target_anywhere": true,
+  "units": []
+ },
+ "dark_prince": {
+  "cost": 4,
+  "id": 26000040,
+  "target_anywhere": false,
+  "units": [
+   "dark_prince"
+  ]
+ },
+ "dart_goblin": {
+  "cost": 3,
+  "id": 26000027,
+  "target_anywhere": false,
+  "units": [
+   "dart_goblin"
+  ]
+ },
+ "earthquake": {
+  "cost": 3,
+  "id": 28000014,
+  "target_anywhere": true,
+  "units": []
+ },
+ "electro_dragon": {
+  "cost": 5,
+  "id": 26000063,
+  "target_anywhere": false,
+  "units": [
+   "electro_dragon"
+  ]
+ },
+ "electro_giant": {
+  "cost": 7,
+  "id": 26000085,
+  "target_anywhere": false,
+  "units": [
+   "electro_giant"
+  ]
+ },
+ "electro_spirit": {
+  "cost": 1,
+  "id": 26000084,
+  "target_anywhere": false,
+  "units": [
+   "electro_spirit"
+  ]
+ },
+ "electro_wizard": {
+  "cost": 4,
+  "id": 26000042,
+  "target_anywhere": false,
+  "units": [
+   "electro_wizard"
+  ]
+ },
+ "elite_barbarians": {
+  "cost": 6,
+  "id": 26000043,
+  "target_anywhere": false,
+  "units": [
+   "elite_barbarian"
+  ]
+ },
+ "elixir_collector": {
+  "cost": 6,
+  "id": 27000007,
+  "target_anywhere": false,
+  "units": [
+   "elixir_collector"
+  ]
+ },
+ "elixir_golem": {
+  "cost": 3,
+  "id": 26000067,
+  "target_anywhere": false,
+  "units": [
+   "elixir_golem_large",
+   "elixir_golem_medium",
+   "elixir_golem_small"
+  ]
+ },
+ "executioner": {
+  "cost": 5,
+  "id": 26000045,
+  "target_anywhere": false,
+  "units": [
+   "executioner"
+  ]
+ },
+ "fire_spirit": {
+  "cost": 1,
+  "id": 26000031,
+  "target_anywhere": false,
+  "units": [
+   "fire_spirit"
+  ]
+ },
+ "fireball": {
+  "cost": 4,
+  "id": 28000000,
+  "target_anywhere": true,
+  "units": []
+ },
+ "firecracker": {
+  "cost": 3,
+  "id": 26000064,
+  "target_anywhere": false,
+  "units": [
+   "firecracker"
+  ]
+ },
+ "fisherman": {
+  "cost": 3,
+  "id": 26000061,
+  "target_anywhere": false,
+  "units": [
+   "fisherman"
+  ]
+ },
+ "flying_machine": {
+  "cost": 4,
+  "id": 26000057,
+  "target_anywhere": false,
+  "units": [
+   "flying_machine"
+  ]
+ },
+ "freeze": {
+  "cost": 4,
+  "id": 28000005,
+  "target_anywhere": true,
+  "units": []
+ },
+ "furnace": {
+  "cost": 4,
+  "id": 27000010,
+  "target_anywhere": false,
+  "units": [
+   "furnace"
+  ]
+ },
+ "giant": {
+  "cost": 5,
+  "id": 26000003,
+  "target_anywhere": false,
+  "units": [
+   "giant"
+  ]
+ },
+ "giant_skeleton": {
+  "cost": 6,
+  "id": 26000020,
+  "target_anywhere": false,
+  "units": [
+   "giant_skeleton"
+  ]
+ },
+ "giant_snowball": {
+  "cost": 2,
+  "id": 28000017,
+  "target_anywhere": true,
+  "units": []
+ },
+ "goblin_barrel": {
+  "cost": 3,
+  "id": 28000004,
+  "target_anywhere": true,
+  "units": [
+   "goblin"
+  ]
+ },
+ "goblin_cage": {
+  "cost": 4,
+  "id": 27000012,
+  "target_anywhere": false,
+  "units": [
+   "goblin_cage",
+   "brawler"
+  ]
+ },
+ "goblin_drill": {
+  "cost": 4,
+  "id": 27000013,
+  "target_anywhere": true,
+  "units": [
+   "goblin_drill",
+   "goblin"
+  ]
+ },
+ "goblin_gang": {
+  "cost": 3,
+  "id": 26000041,
+  "target_anywhere": false,
+  "units": [
+   "goblin",
+   "spear_goblin"
+  ]
+ },
+ "goblin_giant": {
+  "cost": 6,
+  "id": 26000060,
+  "target_anywhere": false,
+  "units": [
+   "spear_goblin"
+  ]
+ },
+ "goblin_hut": {
+  "cost": 5,
+  "id": 27000001,
+  "target_anywhere": false,
+  "units": [
+   "goblin_hut",
+   "spear_goblin"
+  ]
+ },
+ "goblins": {
+  "cost": 2,
+  "id": 26000002,
+  "target_anywhere": false,
+  "units": [
+   "goblin"
+  ]
+ },
+ "golden_knight": {
+  "cost": 4,
+  "id": 26000074,
+  "target_anywhere": false,
+  "units": [
+   "golden_knight"
+  ]
+ },
+ "golem": {
+  "cost": 8,
+  "id": 26000009,
+  "target_anywhere": false,
+  "units": [
+   "golem",
+   "golemite"
+  ]
+ },
+ "graveyard": {
+  "cost": 5,
+  "id": 28000010,
+  "target_anywhere": true,
+  "units": [
+   "skeleton"
+  ]
+ },
+ "guards": {
+  "cost": 3,
+  "id": 26000025,
+  "target_anywhere": false,
+  "units": [
+   "guard"
+  ]
+ },
+ "heal_spirit": {
+  "cost": 1,
+  "id": 28000016,
+  "target_anywhere": false,
+  "units": [
+   "heal_spirit"
+  ]
+ },
+ "hog_rider": {
+  "cost": 4,
+  "id": 26000021,
+  "target_anywhere": false,
+  "units": [
+   "hog_rider"
+  ]
+ },
+ "hunter": {
+  "cost": 4,
+  "id": 26000044,
+  "target_anywhere": false,
+  "units": [
+   "hunter"
+  ]
+ },
+ "ice_golem": {
+  "cost": 2,
+  "id": 26000038,
+  "target_anywhere": false,
+  "units": [
+   "ice_golem"
+  ]
+ },
+ "ice_spirit": {
+  "cost": 1,
+  "id": 26000030,
+  "target_anywhere": false,
+  "units": [
+   "ice_spirit"
+  ]
+ },
+ "ice_wizard": {
+  "cost": 3,
+  "id": 26000023,
+  "target_anywhere": false,
+  "units": [
+   "ice_wizard"
+  ]
+ },
+ "inferno_dragon": {
+  "cost": 4,
+  "id": 26000037,
+  "target_anywhere": false,
+  "units": [
+   "inferno_dragon"
+  ]
+ },
+ "inferno_tower": {
+  "cost": 5,
+  "id": 27000003,
+  "target_anywhere": false,
+  "units": [
+   "inferno_tower"
+  ]
+ },
+ "knight": {
+  "cost": 3,
+  "id": 26000000,
+  "target_anywhere": false,
+  "units": [
+   "knight"
+  ]
+ },
+ "lava_hound": {
+  "cost": 7,
+  "id": 26000029,
+  "target_anywhere": false,
+  "units": [
+   "lava_hound",
+   "lava_pup"
+  ]
+ },
+ "lightning": {
+  "cost": 6,
+  "id": 28000007,
+  "target_anywhere": true,
+  "units": []
+ },
+ "little_prince": {
+  "cost": 3,
+  "id": 26000093,
+  "target_anywhere": false,
+  "units": [
+   "little_prince",
+   "royal_guardian"
+  ]
+ },
+ "lumberjack": {
+  "cost": 4,
+  "id": 26000035,
+  "target_anywhere": false,
+  "units": [
+   "lumberjack"
+  ]
+ },
+ "magic_archer": {
+  "cost": 4,
+  "id": 26000062,
+  "target_anywhere": false,
+  "units": [
+   "magic_archer"
+  ]
+ },
+ "mega_knight": {
+  "cost": 7,
+  "id": 26000055,
+  "target_anywhere": false,
+  "units": [
+   "mega_knight"
+  ]
+ },
+ "mega_minion": {
+  "cost": 3,
+  "id": 26000039,
+  "target_anywhere": false,
+  "units": [
+   "mega_minion"
+  ]
+ },
+ "mighty_miner": {
+  "cost": 4,
+  "id": 26000065,
+  "target_anywhere": false,
+  "units": [
+   "mighty_miner"
+  ]
+ },
+ "miner": {
+  "cost": 3,
+  "id": 26000032,
+  "target_anywhere": false,
+  "units": [
+   "miner"
+  ]
+ },
+ "minion_horde": {
+  "cost": 5,
+  "id": 26000022,
+  "target_anywhere": false,
+  "units": [
+   "minion"
+  ]
+ },
+ "minions": {
+  "cost": 3,
+  "id": 26000005,
+  "target_anywhere": false,
+  "units": [
+   "minion"
+  ]
+ },
+ "minipekka": {
+  "cost": 4,
+  "id": 26000018,
+  "target_anywhere": false,
+  "units": [
+   "minipekka"
+  ]
+ },
+ "mirror": {
+  "cost": -1,
+  "id": 28000006,
+  "target_anywhere": true,
+  "units": []
+ },
+ "monk": {
+  "cost": 5,
+  "id": 26000077,
+  "target_anywhere": false,
+  "units": [
+   "monk"
+  ]
+ },
+ "mortar": {
+  "cost": 4,
+  "id": 27000002,
+  "target_anywhere": false,
+  "units": [
+   "mortar"
+  ]
+ },
+ "mother_witch": {
+  "cost": 4,
+  "id": 26000083,
+  "target_anywhere": false,
+  "units": [
+   "mother_witch",
+   "hog"
+  ]
+ },
+ "musketeer": {
+  "cost": 4,
+  "id": 26000014,
+  "target_anywhere": false,
+  "units": [
+   "musketeer"
+  ]
+ },
+ "night_witch": {
+  "cost": 4,
+  "id": 26000048,
+  "target_anywhere": false,
+  "units": [
+   "night_witch",
+   "bat"
+  ]
+ },
+ "pekka": {
+  "cost": 7,
+  "id": 26000004,
+  "target_anywhere": false,
+  "units": [
+   "pekka"
+  ]
+ },
+ "phoenix": {
+  "cost": 4,
+  "id": 26000087,
+  "target_anywhere": false,
+  "units": [
+   "phoenix_large",
+   "phoenix_egg",
+   "phoenix_small"
+  ]
+ },
+ "poison": {
+  "cost": 4,
+  "id": 28000009,
+  "target_anywhere": true,
+  "units": []
+ },
+ "prince": {
+  "cost": 5,
+  "id": 26000016,
+  "target_anywhere": false,
+  "units": [
+   "prince"
+  ]
+ },
+ "princess": {
+  "cost": 3,
+  "id": 26000026,
+  "target_anywhere": false,
+  "units": [
+   "princess"
+  ]
+ },
+ "rage": {
+  "cost": 2,
+  "id": 28000002,
+  "target_anywhere": true,
+  "units": []
+ },
+ "ram_rider": {
+  "cost": 5,
+  "id": 26000051,
+  "target_anywhere": false,
+  "units": [
+   "ram_rider"
+  ]
+ },
+ "rascals": {
+  "cost": 5,
+  "id": 26000053,
+  "target_anywhere": false,
+  "units": [
+   "rascal_boy",
+   "rascal_girl"
+  ]
+ },
+ "rocket": {
+  "cost": 6,
+  "id": 28000003,
+  "target_anywhere": true,
+  "units": []
+ },
+ "royal_delivery": {
+  "cost": 3,
+  "id": 28000018,
+  "target_anywhere": false,
+  "units": [
+   "royal_recruit"
+  ]
+ },
+ "royal_ghost": {
+  "cost": 3,
+  "id": 26000050,
+  "target_anywhere": false,
+  "units": [
+   "royal_ghost"
+  ]
+ },
+ "royal_giant": {
+  "cost": 6,
+  "id": 26000024,
+  "target_anywhere": false,
+  "units": [
+   "royal_giant"
+  ]
+ },
+ "royal_hogs": {
+  "cost": 5,
+  "id": 26000059,
+  "target_anywhere": false,
+  "units": [
+   "royal_hog"
+  ]
+ },
+ "royal_recruits": {
+  "cost": 7,
+  "id": 26000047,
+  "target_anywhere": false,
+  "units": [
+   "royal_recruit"
+  ]
+ },
+ "skeleton_army": {
+  "cost": 3,
+  "id": 26000012,
+  "target_anywhere": false,
+  "units": [
+   "skeleton"
+  ]
+ },
+ "skeleton_barrel": {
+  "cost": 3,
+  "id": 26000056,
+  "target_anywhere": false,
+  "units": [
+   "skeleton"
+  ]
+ },
+ "skeleton_dragons": {
+  "cost": 4,
+  "id": 26000080,
+  "target_anywhere": false,
+  "units": [
+   "skeleton_dragon"
+  ]
+ },
+ "skeleton_king": {
+  "cost": 4,
+  "id": 26000069,
+  "target_anywhere": false,
+  "units": [
+   "skeleton_king",
+   "skeleton"
+  ]
+ },
+ "skeletons": {
+  "cost": 1,
+  "id": 26000010,
+  "target_anywhere": false,
+  "units": [
+   "skeleton"
+  ]
+ },
+ "sparky": {
+  "cost": 6,
+  "id": 26000033,
+  "target_anywhere": false,
+  "units": [
+   "sparky"
+  ]
+ },
+ "spear_goblins": {
+  "cost": 2,
+  "id": 26000019,
+  "target_anywhere": false,
+  "units": [
+   "spear_goblin"
+  ]
+ },
+ "tesla": {
+  "cost": 4,
+  "id": 27000006,
+  "target_anywhere": false,
+  "units": [
+   "tesla"
+  ]
+ },
+ "the_log": {
+  "cost": 2,
+  "id": 28000011,
+  "target_anywhere": true,
+  "units": []
+ },
+ "three_musketeers": {
+  "cost": 9,
+  "id": 26000028,
+  "target_anywhere": false,
+  "units": [
+   "musketeer"
+  ]
+ },
+ "tombstone": {
+  "cost": 3,
+  "id": 27000009,
+  "target_anywhere": false,
+  "units": [
+   "tombstone"
+  ]
+ },
+ "tornado": {
+  "cost": 3,
+  "id": 28000012,
+  "target_anywhere": true,
+  "units": []
+ },
+ "valkyrie": {
+  "cost": 4,
+  "id": 26000011,
+  "target_anywhere": false,
+  "units": [
+   "valkyrie"
+  ]
+ },
+ "wall_breakers": {
+  "cost": 2,
+  "id": 26000058,
+  "target_anywhere": false,
+  "units": [
+   "wall_breaker"
+  ]
+ },
+ "witch": {
+  "cost": 5,
+  "id": 26000007,
+  "target_anywhere": false,
+  "units": [
+   "witch",
+   "skeleton"
+  ]
+ },
+ "wizard": {
+  "cost": 5,
+  "id": 26000017,
+  "target_anywhere": false,
+  "units": [
+   "wizard"
+  ]
+ },
+ "x_bow": {
+  "cost": 6,
+  "id": 27000008,
+  "target_anywhere": false,
+  "units": [
+   "x_bow"
+  ]
+ },
+ "zap": {
+  "cost": 2,
+  "id": 28000008,
+  "target_anywhere": true,
+  "units": []
+ },
+ "zappies": {
+  "cost": 4,
+  "id": 26000052,
+  "target_anywhere": false,
+  "units": [
+   "zappy"
+  ]
+ }
+}

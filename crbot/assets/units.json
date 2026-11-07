@@ -1,0 +1,487 @@
+{
+ "archer": {
+  "category": "troop",
+  "flying": false,
+  "targets": "all"
+ },
+ "archer_queen": {
+  "category": "troop",
+  "flying": false,
+  "targets": "all"
+ },
+ "baby_dragon": {
+  "category": "troop",
+  "flying": true,
+  "targets": "all"
+ },
+ "balloon": {
+  "category": "troop",
+  "flying": true,
+  "targets": "buildings"
+ },
+ "bandit": {
+  "category": "troop",
+  "flying": false,
+  "targets": "ground"
+ },
+ "barbarian": {
+  "category": "troop",
+  "flying": false,
+  "targets": "ground"
+ },
+ "barbarian_hut": {
+  "category": "building",
+  "flying": false,
+  "targets": null
+ },
+ "bat": {
+  "category": "troop",
+  "flying": true,
+  "targets": "all"
+ },
+ "battle_healer": {
+  "category": "troop",
+  "flying": false,
+  "targets": "ground"
+ },
+ "battle_ram": {
+  "category": "troop",
+  "flying": false,
+  "targets": "buildings"
+ },
+ "bomb_tower": {
+  "category": "building",
+  "flying": false,
+  "targets": "ground"
+ },
+ "bomber": {
+  "category": "troop",
+  "flying": false,
+  "targets": "ground"
+ },
+ "bowler": {
+  "category": "troop",
+  "flying": false,
+  "targets": "ground"
+ },
+ "brawler": {
+  "category": "troop",
+  "flying": false,
+  "targets": "ground"
+ },
+ "cannon": {
+  "category": "building",
+  "flying": false,
+  "targets": "ground"
+ },
+ "cannon_cart": {
+  "category": "troop",
+  "flying": false,
+  "targets": "ground"
+ },
+ "dark_prince": {
+  "category": "troop",
+  "flying": false,
+  "targets": "ground"
+ },
+ "dart_goblin": {
+  "category": "troop",
+  "flying": false,
+  "targets": "all"
+ },
+ "electro_dragon": {
+  "category": "troop",
+  "flying": true,
+  "targets": "all"
+ },
+ "electro_giant": {
+  "category": "troop",
+  "flying": false,
+  "targets": "buildings"
+ },
+ "electro_spirit": {
+  "category": "troop",
+  "flying": false,
+  "targets": "all"
+ },
+ "electro_wizard": {
+  "category": "troop",
+  "flying": false,
+  "targets": "all"
+ },
+ "elite_barbarian": {
+  "category": "troop",
+  "flying": false,
+  "targets": "ground"
+ },
+ "elixir_collector": {
+  "category": "building",
+  "flying": false,
+  "targets": null
+ },
+ "elixir_golem_large": {
+  "category": "troop",
+  "flying": false,
+  "targets": "buildings"
+ },
+ "elixir_golem_medium": {
+  "category": "troop",
+  "flying": false,
+  "targets": "buildings"
+ },
+ "elixir_golem_small": {
+  "category": "troop",
+  "flying": false,
+  "targets": "buildings"
+ },
+ "executioner": {
+  "category": "troop",
+  "flying": false,
+  "targets": "all"
+ },
+ "fire_spirit": {
+  "category": "troop",
+  "flying": false,
+  "targets": "all"
+ },
+ "firecracker": {
+  "category": "troop",
+  "flying": false,
+  "targets": "all"
+ },
+ "fisherman": {
+  "category": "troop",
+  "flying": false,
+  "targets": "ground"
+ },
+ "flying_machine": {
+  "category": "troop",
+  "flying": true,
+  "targets": "all"
+ },
+ "furnace": {
+  "category": "building",
+  "flying": false,
+  "targets": null
+ },
+ "giant": {
+  "category": "troop",
+  "flying": false,
+  "targets": "ground"
+ },
+ "giant_skeleton": {
+  "category": "troop",
+  "flying": false,
+  "targets": "ground"
+ },
+ "giant_snowball": {
+  "category": "troop",
+  "flying": false,
+  "targets": null
+ },
+ "goblin": {
+  "category": "troop",
+  "flying": false,
+  "targets": "ground"
+ },
+ "goblin_cage": {
+  "category": "building",
+  "flying": false,
+  "targets": null
+ },
+ "goblin_drill": {
+  "category": "building",
+  "flying": false,
+  "targets": "ground"
+ },
+ "goblin_hut": {
+  "category": "building",
+  "flying": false,
+  "targets": null
+ },
+ "golden_knight": {
+  "category": "troop",
+  "flying": false,
+  "targets": "ground"
+ },
+ "golem": {
+  "category": "troop",
+  "flying": false,
+  "targets": "buildings"
+ },
+ "golemite": {
+  "category": "troop",
+  "flying": false,
+  "targets": "buildings"
+ },
+ "guard": {
+  "category": "troop",
+  "flying": false,
+  "targets": "ground"
+ },
+ "heal_spirit": {
+  "category": "troop",
+  "flying": false,
+  "targets": "all"
+ },
+ "hog": {
+  "category": "troop",
+  "flying": false,
+  "targets": "buildings"
+ },
+ "hog_rider": {
+  "category": "troop",
+  "flying": false,
+  "targets": "buildings"
+ },
+ "hunter": {
+  "category": "troop",
+  "flying": false,
+  "targets": "all"
+ },
+ "ice_golem": {
+  "category": "troop",
+  "flying": false,
+  "targets": "buildings"
+ },
+ "ice_spirit": {
+  "category": "troop",
+  "flying": false,
+  "targets": "all"
+ },
+ "ice_wizard": {
+  "category": "troop",
+  "flying": true,
+  "targets": "all"
+ },
+ "inferno_dragon": {
+  "category": "troop",
+  "flying": true,
+  "targets": "all"
+ },
+ "inferno_tower": {
+  "category": "building",
+  "flying": false,
+  "targets": null
+ },
+ "knight": {
+  "category": "troop",
+  "flying": false,
+  "targets": "ground"
+ },
+ "lava_hound": {
+  "category": "troop",
+  "flying": true,
+  "targets": "buildings"
+ },
+ "lava_pup": {
+  "category": "troop",
+  "flying": true,
+  "targets": "buildings"
+ },
+ "little_prince": {
+  "category": "troop",
+  "flying": false,
+  "targets": "all"
+ },
+ "lumberjack": {
+  "category": "troop",
+  "flying": false,
+  "targets": "ground"
+ },
+ "magic_archer": {
+  "category": "troop",
+  "flying": false,
+  "targets": "all"
+ },
+ "mega_knight": {
+  "category": "troop",
+  "flying": false,
+  "targets": "ground"
+ },
+ "mega_minion": {
+  "category": "troop",
+  "flying": true,
+  "targets": "all"
+ },
+ "mighty_miner": {
+  "category": "troop",
+  "flying": false,
+  "targets": "ground"
+ },
+ "miner": {
+  "category": "troop",
+  "flying": false,
+  "targets": "ground"
+ },
+ "minion": {
+  "category": "troop",
+  "flying": true,
+  "targets": "all"
+ },
+ "minipekka": {
+  "category": "troop",
+  "flying": false,
+  "targets": "ground"
+ },
+ "monk": {
+  "category": "troop",
+  "flying": false,
+  "targets": "ground"
+ },
+ "mortar": {
+  "category": "building",
+  "flying": false,
+  "targets": "ground"
+ },
+ "mother_witch": {
+  "category": "troop",
+  "flying": false,
+  "targets": "all"
+ },
+ "musketeer": {
+  "category": "troop",
+  "flying": false,
+  "targets": "all"
+ },
+ "night_witch": {
+  "category": "troop",
+  "flying": false,
+  "targets": "all"
+ },
+ "pekka": {
+  "category": "troop",
+  "flying": false,
+  "targets": "all"
+ },
+ "phoenix_egg": {
+  "category": "troop",
+  "flying": false,
+  "targets": null
+ },
+ "phoenix_large": {
+  "category": "troop",
+  "flying": true,
+  "targets": "all"
+ },
+ "phoenix_small": {
+  "category": "troop",
+  "flying": true,
+  "targets": "all"
+ },
+ "prince": {
+  "category": "troop",
+  "flying": false,
+  "targets": "ground"
+ },
+ "princess": {
+  "category": "troop",
+  "flying": false,
+  "targets": "all"
+ },
+ "ram_rider": {
+  "category": "troop",
+  "flying": false,
+  "targets": "buildings"
+ },
+ "rascal_boy": {
+  "category": "troop",
+  "flying": false,
+  "targets": "ground"
+ },
+ "rascal_girl": {
+  "category": "troop",
+  "flying": false,
+  "targets": "all"
+ },
+ "royal_ghost": {
+  "category": "troop",
+  "flying": false,
+  "targets": "ground"
+ },
+ "royal_giant": {
+  "category": "troop",
+  "flying": false,
+  "targets": "buildings"
+ },
+ "royal_guardian": {
+  "category": "troop",
+  "flying": false,
+  "targets": "ground"
+ },
+ "royal_hog": {
+  "category": "troop",
+  "flying": false,
+  "targets": "buildings"
+ },
+ "royal_recruit": {
+  "category": "troop",
+  "flying": false,
+  "targets": "ground"
+ },
+ "skeleton": {
+  "category": "troop",
+  "flying": false,
+  "targets": "ground"
+ },
+ "skeleton_dragon": {
+  "category": "troop",
+  "flying": true,
+  "targets": "all"
+ },
+ "skeleton_king": {
+  "category": "troop",
+  "flying": false,
+  "targets": "ground"
+ },
+ "sparky": {
+  "category": "troop",
+  "flying": false,
+  "targets": "ground"
+ },
+ "spear_goblin": {
+  "category": "troop",
+  "flying": false,
+  "targets": "all"
+ },
+ "tesla": {
+  "category": "building",
+  "flying": false,
+  "targets": "all"
+ },
+ "tombstone": {
+  "category": "building",
+  "flying": false,
+  "targets": null
+ },
+ "valkyrie": {
+  "category": "troop",
+  "flying": false,
+  "targets": "ground"
+ },
+ "wall_breaker": {
+  "category": "troop",
+  "flying": false,
+  "targets": "buildings"
+ },
+ "witch": {
+  "category": "troop",
+  "flying": false,
+  "targets": "all"
+ },
+ "wizard": {
+  "category": "troop",
+  "flying": false,
+  "targets": "all"
+ },
+ "x_bow": {
+  "category": "building",
+  "flying": false,
+  "targets": "ground"
+ },
+ "zappy": {
+  "category": "troop",
+  "flying": false,
+  "targets": "ground"
+ }
+}

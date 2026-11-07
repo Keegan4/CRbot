@@ -1,0 +1,19 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.venv/
+venv/
+
+# Downloaded or trained models, datasets and run outputs
+models/
+datasets/
+runs/
+recordings/
+*.pt
+*.onnx
+
+# Outputs of `python -m crbot live/calibrate`
+*.mp4
+*.jsonl
+calibration.png

@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "crbot"
+version = "0.1.0"
+description = "Read Clash Royale game state from a live video feed"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.24",
+    "opencv-python>=4.8",
+    "scipy>=1.10",
+]
+
+[project.optional-dependencies]
+onnx = ["onnxruntime>=1.16"]          # BuildABot's pretrained detector, exported models
+yolo = ["ultralytics>=8.1"]           # training / running YOLO .pt models
+train = ["ultralytics>=8.1", "torch>=2.1", "onnx>=1.15"]
+dev = ["pytest>=7", "onnxruntime>=1.16"]
+
+[project.scripts]
+crbot = "crbot.__main__:main"
+
+[tool.setuptools.packages.find]
+include = ["crbot*"]
+
+[tool.setuptools.package-data]
+crbot = ["assets/*.json", "assets/*.yaml", "assets/cards/*.jpg", "assets/screens/*.jpg"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
