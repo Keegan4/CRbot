@@ -8,15 +8,15 @@
 #   python training/nosana/make_job.py
 #
 # Settings (environment variables):
-#   EPOCHS (120)  MODEL (yolov8s.pt)  IMGSZ (640)  BATCH (32)
+#   EPOCHS (120)  MODEL (yolov8m.pt)  IMGSZ (640)  BATCH (16)
 #   SERVE_MINUTES (60)  how long to keep the download server up
 #   WORK (/tmp/work)    STAGE=prepare stops after the dataset conversion
 set -euo pipefail
 
 EPOCHS=${EPOCHS:-120}
-MODEL=${MODEL:-yolov8s.pt}
+MODEL=${MODEL:-yolov8m.pt}
 IMGSZ=${IMGSZ:-640}
-BATCH=${BATCH:-32}
+BATCH=${BATCH:-16}
 SERVE_MINUTES=${SERVE_MINUTES:-60}
 WORK=${WORK:-/tmp/work}
 DATASET=${DATASET:-$WORK/katacr/images/part2}

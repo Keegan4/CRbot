@@ -20,8 +20,8 @@ HERE = Path(__file__).resolve().parent
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--epochs", type=int, default=120)
-    parser.add_argument("--model", default="yolov8s.pt")
-    parser.add_argument("--batch", type=int, default=32)
+    parser.add_argument("--model", default="yolov8m.pt")
+    parser.add_argument("--batch", type=int, default=16)
     parser.add_argument("--serve-minutes", type=int, default=60)
     parser.add_argument("--image", default="docker.io/ultralytics/ultralytics:latest")
     parser.add_argument("--vram", type=int, default=16, help="minimum GPU memory in GB")
