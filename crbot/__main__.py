@@ -1,6 +1,7 @@
 """Command line: ``python -m crbot <command>``.
 
     live           read the game state from a feed, show / record / log it
+    image          read the state of one screenshot
     calibrate      draw the screen layout on a screenshot to check alignment
     record         save frames from a feed, e.g. to label for training
     cards-collect  collect hand-card templates from your own game
@@ -27,8 +28,6 @@ def cmd_live(args) -> int:
     from .capture import LatestFrame, open_source
     from .geometry import Layout
     from .state.builder import GameStateBuilder
-    from .vision.detector import load_detector
-    from .vision.side import OnnxCropClassifier
     from .viz import draw_state
 
     layout = Layout.load(args.layout) if args.layout else None
@@ -42,14 +41,7 @@ def cmd_live(args) -> int:
         return 1
     builder = GameStateBuilder(deck=_deck(args.deck), layout=layout, elapsed_offset=args.elapsed_offset)
     lay, grid = builder.geometry(*first.size)
-    arena_crop = lay.arena.expand(0.01, 0.01)
-    builder.detector = load_detector(args.detector, arena_crop=arena_crop,
-                                     min_conf=args.min_conf, device=args.device)
-    side_model = args.side_model
-    if side_model is None and Path("models/buildabot/side.onnx").exists() and args.detector == "buildabot":
-        side_model = "models/buildabot/side.onnx"
-    if side_model:
-        builder.sides.classifier = OnnxCropClassifier(Path(side_model))
+    _setup_models(builder, lay, args)
 
     log = open(args.log, "a", encoding="utf-8") if args.log else None
     writer = None
@@ -89,6 +81,59 @@ def cmd_live(args) -> int:
             writer.release()
         if args.show:
             cv2.destroyAllWindows()
+    return 0
+
+
+def _setup_models(builder, layout, args) -> None:
+    from .vision.detector import load_detector
+    from .vision.side import OnnxCropClassifier
+
+    builder.detector = load_detector(args.detector, arena=layout.arena,
+                                     min_conf=args.min_conf, device=args.device)
+    side_model = args.side_model
+    if side_model is None and args.detector == "buildabot" and Path("models/buildabot/side.onnx").exists():
+        side_model = "models/buildabot/side.onnx"
+    if side_model:
+        builder.sides.classifier = OnnxCropClassifier(Path(side_model))
+
+
+def cmd_image(args) -> int:
+    """One-shot perception on a single screenshot: no tracking over time."""
+    import cv2
+
+    from .capture import Frame
+    from .geometry import Layout
+    from .state.builder import GameStateBuilder
+    from .viz import draw_state
+
+    image = cv2.imread(args.image, cv2.IMREAD_COLOR)
+    if image is None:
+        print(f"could not read {args.image}", file=sys.stderr)
+        return 1
+    layout = Layout.load(args.layout) if args.layout else None
+    builder = GameStateBuilder(deck=_deck(args.deck), layout=layout)
+    builder.tracker.confirm_hits = 1          # a single frame has to be enough
+    h, w = image.shape[:2]
+    lay, grid = builder.geometry(w, h)
+    _setup_models(builder, lay, args)
+    state = builder.process(Frame(image, 0.0, 0))
+
+    print(f"{w}x{h}, layout '{lay.name}', screen={state.screen}, in battle={state.in_battle}")
+    if state.in_battle:
+        cards = ", ".join("unrecognised" if c is None else f"{c}{'' if p else ' (greyed)'}"
+                          for c, p in zip(state.hand, state.playable))
+        print(f"hand: {cards}   next: {state.next_card or '?'}")
+        print(f"elixir: {state.elixir}")
+        print("towers: " + ", ".join(f"{k}={v.hp:.2f}" for k, v in state.towers.items()))
+        print(f"units ({len(builder.last_detections)}):")
+        for d in sorted(builder.last_detections, key=lambda d: d.tile[1]):
+            print(f"  {d.name:16s} {'ours  ' if d.side == 0 else 'theirs'} tile=({d.tile[0]:4.1f},{d.tile[1]:4.1f}) "
+                  f"conf={d.conf:.2f} side by {d.side_method} ({d.side_conf:.2f})")
+    if args.out:
+        cv2.imwrite(args.out, draw_state(image, state, grid, builder.last_detections, lay))
+        print(f"overlay -> {args.out}")
+    if args.json:
+        Path(args.json).write_text(state.to_json() + "\n", encoding="utf-8")
     return 0
 
 
@@ -220,6 +265,18 @@ def main(argv=None) -> int:
     live.add_argument("--max-frames", type=int, default=0)
     live.add_argument("--print-every", type=int, default=10)
     live.set_defaults(func=cmd_live)
+
+    img = sub.add_parser("image", help="read the state of a single screenshot")
+    img.add_argument("image")
+    img.add_argument("--detector", default="buildabot")
+    img.add_argument("--side-model")
+    img.add_argument("--deck")
+    img.add_argument("--layout")
+    img.add_argument("--min-conf", type=float, default=0.35)
+    img.add_argument("--device")
+    img.add_argument("--out", help="write the overlay image here")
+    img.add_argument("--json", help="write the GameState JSON here")
+    img.set_defaults(func=cmd_image)
 
     cal = sub.add_parser("calibrate", help="draw the layout on a frame to check alignment")
     cal.add_argument("--image", help="a screenshot")

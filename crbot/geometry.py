@@ -127,28 +127,27 @@ LAYOUT_9x16 = Layout(
     notes="Used for live play by ClashRoyaleBuildABot and Hasty-CR.",
 )
 
-# Tall phones (about 2.16:1, e.g. 592x1280). From KataCR's crop constants,
-# which were used to cut its detection dataset. The hand and elixir regions
-# are converted from its card-table crop; the elixir bar itself was not
-# measured there, so it is an estimate. Unverified: calibrate before use.
-_T3 = Rect(0.000, 0.808, 1.000, 0.155)          # KataCR "part3": card table
-
-
-def _in(parent: Rect, x: float, y: float, w: float, h: float) -> Rect:
-    return Rect(parent.x + x * parent.w, parent.y + y * parent.h, w * parent.w, h * parent.h)
-
-
+# Tall phones (about 2.17:1, e.g. 942x2048 or 1080x2340). Measured on a
+# 942x2048 phone screenshot. The arena was fitted to the red "no deploy" zone
+# (its lower edge is the top of row 17) with the tile aspect of the 9:16
+# profile, and agrees with the tower HP bars to within ~0.3 tile. Checked on a
+# single screenshot; calibrate against your own phone.
+_TW, _TH = 942.0, 2048.0
 LAYOUT_TALL = Layout(
-    name="tall_2.16",
-    aspect=2.165,
-    arena=Rect(0.021, 0.073, 0.960, 0.700),
-    hand=(_in(_T3, 0.222, 0.0, 0.185, 0.745), _in(_T3, 0.410, 0.0, 0.185, 0.745),
-          _in(_T3, 0.600, 0.0, 0.185, 0.745), _in(_T3, 0.785, 0.0, 0.185, 0.745)),
-    next_card=_in(_T3, 0.047, 0.590, 0.100, 0.365),
-    elixir_bar=_in(_T3, 0.335, 0.72, 0.640, 0.12),
-    tower_hp={},
-    verified=False,
-    notes="From KataCR's dataset crops; elixir bar estimated; no tower HP regions.",
+    name="tall_2.17",
+    aspect=_TH / _TW,
+    arena=_px(27, 286, 888, 32 * 40.05, _TW, _TH),
+    hand=tuple(_px(222 + 176 * i, 1740, 145, 160, _TW, _TH) for i in range(4)),  # type: ignore[arg-type]
+    next_card=_px(52, 1890, 72, 105, _TW, _TH),
+    elixir_bar=_px(255, 1952, 657, 26, _TW, _TH),
+    tower_hp={
+        "enemy_left": _px(157, 419, 116, 16, _TW, _TH),
+        "enemy_right": _px(704, 419, 116, 16, _TW, _TH),
+        "ally_left": _px(157, 1294, 116, 16, _TW, _TH),
+        "ally_right": _px(704, 1294, 116, 16, _TW, _TH),
+    },
+    verified=True,
+    notes="Measured on one 942x2048 screenshot (aspect 2.17).",
 )
 
 LAYOUTS = (LAYOUT_9x16, LAYOUT_TALL)

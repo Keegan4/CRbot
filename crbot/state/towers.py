@@ -65,8 +65,7 @@ class TowerTracker:
             state.missing = 0
             self.start_readings.setdefault(name, reading.fraction)
             state.recent.append(reading.fraction)
-            if len(state.recent) >= 3:
-                state.hp = float(np.median(state.recent))
+            state.hp = float(np.median(state.recent))
         return self.towers
 
     def start_check(self, tolerance: float = 0.05) -> Dict[str, bool]:

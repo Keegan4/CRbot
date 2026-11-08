@@ -23,6 +23,9 @@ python -m crbot live --source match.mp4 --step 6 --detector buildabot \
     --deck hog_rider,musketeer,cannon,fireball,the_log,ice_golem,ice_spirit,skeletons \
     --record overlay.mp4 --log states.jsonl
 
+# One screenshot (prints the state, writes an overlay):
+python -m crbot image screenshot.png --out overlay.png
+
 # An emulator over ADB (set it to 720x1280 or 1080x1920), with a live window:
 python -m crbot live --source adb --threaded --show --detector buildabot --deck ...
 ```
@@ -147,9 +150,10 @@ mv models/cards_unlabeled models/cards
 ## Other aspect ratios
 
 Layouts are per aspect ratio. Clash Royale fits the arena to the screen width
-on tall phones and to the height on 9:16 screens. The verified profile is
-9:16. A tall-phone profile from KataCR's constants is included but
-unverified. To check or adjust one:
+on tall phones and to the height on 9:16 screens. There are two profiles:
+9:16 (emulators; used by two other bots for live play) and 2.17:1 (phones such
+as 942x2048 or 1080x2340, measured on one screenshot, where all four tower HP
+bars read within 0.02 of the true values). To check or adjust one:
 
 ```bash
 python -m crbot calibrate --image screenshot.png --out check.png --save-layout my_layout.json

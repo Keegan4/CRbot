@@ -131,6 +131,19 @@ class CardReader:
         self.names = sorted(self.templates)
         # Looser with a known deck: fewer candidates, so less to confuse.
         self.max_distance = max_distance if max_distance is not None else (1.0 if deck else 0.75)
+        # Without a deck, also require a clear winner. On a phone screenshot,
+        # every real card beat its runner-up by 0.18 or more, and the one
+        # wrong guess won by 0.01.
+        self.min_margin = 0.0 if deck else 0.08
+
+    def _confident(self, distances: np.ndarray, index: int) -> bool:
+        best = float(distances[index])
+        if best > self.max_distance:
+            return False
+        if self.min_margin and len(distances) > 1:
+            runner_up = float(np.partition(distances, 1)[1]) if np.argmin(distances) == index else float(distances.min())
+            return runner_up - best >= self.min_margin
+        return True
 
     def distances(self, crop: np.ndarray) -> np.ndarray:
         h = card_hash(crop)
@@ -149,7 +162,7 @@ class CardReader:
             rows, cols = linear_sum_assignment(cost)
             for r, c in zip(rows, cols):
                 distances[slots[r]] = float(cost[r, c])
-                if cost[r, c] <= self.max_distance:
+                if self._confident(cost[r], c):
                     cards[slots[r]] = self.names[c]
         playable = [cards[i] is not None and not is_greyed(crops[i]) for i in range(4)]
 
@@ -162,7 +175,7 @@ class CardReader:
                 if self.names[index] in in_hand:
                     continue
                 next_distance = float(cost[index])
-                if next_distance <= self.max_distance:
+                if self._confident(cost, index):
                     next_card = self.names[index]
                 break
         return HandReading(cards, distances, playable, empty, next_card, next_distance)

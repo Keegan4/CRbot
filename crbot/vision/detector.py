@@ -74,6 +74,13 @@ def letterbox(image: np.ndarray, height: int, width: int,
     return out, scale, left, top
 
 
+def buildabot_crop(arena: Rect) -> Rect:
+    """The 9:16 band BuildABot crops (y 5%-80%, full width), expressed
+    relative to the arena rectangle, so it can be applied to any layout."""
+    return Rect(arena.x - 0.085 * arena.w, arena.y - 0.0417 * arena.h,
+                arena.w * 1.17, arena.h * (1 + 0.0417 + 0.045))
+
+
 class OnnxEndToEndDetector:
     """ONNX detector whose output is ``(N, 6)``: x0, y0, x1, y1, conf, class.
 
@@ -99,8 +106,14 @@ class OnnxEndToEndDetector:
         self.min_conf = min_conf
 
     @classmethod
-    def buildabot(cls, model_path: Path, **kwargs) -> "OnnxEndToEndDetector":
+    def buildabot(cls, model_path: Path, arena: Optional[Rect] = None, **kwargs) -> "OnnxEndToEndDetector":
+        """BuildABot's detector. Its training images were the 5%-80% band of
+        a 9:16 screen, which is the arena rectangle plus fixed margins. Given
+        the arena of another layout, the same framing is rebuilt around it,
+        so tall-phone frames look to the model like the ones it learned on."""
         names = json.loads((ASSETS / "buildabot_classes.json").read_text(encoding="utf-8"))
+        if arena is not None and "crop" not in kwargs:
+            kwargs["crop"] = buildabot_crop(arena)
         return cls(model_path, names, **kwargs)
 
     def detect(self, image: np.ndarray) -> List[RawBox]:
@@ -172,24 +185,29 @@ class NullDetector:
         return []
 
 
-def load_detector(spec: Optional[str], arena_crop: Optional[Rect] = None,
+def load_detector(spec: Optional[str], arena: Optional[Rect] = None,
                   min_conf: float = 0.35, device: Optional[str] = None) -> Detector:
     """Pick a backend from a path or a keyword.
+
+    ``arena`` is the layout's arena rectangle; each backend derives the crop
+    its training images used from it.
 
     ``None`` / ``"none"``      no unit detection
     ``"buildabot"``            models/buildabot/units_M_480x352.onnx
     ``*.onnx``                 end-to-end ONNX model; class names from a
-                               sibling ``<model>.names.json`` if present,
-                               otherwise BuildABot's class list
-    anything else              an ultralytics model
+                               sibling ``<model>.names.json`` if present
+                               (then cropped like the KataCR data, to the
+                               arena), otherwise treated as BuildABot's model
+    anything else              an ultralytics model, cropped to the arena
     """
+    arena_crop = arena.expand(0.01, 0.01) if arena is not None else None
     if spec in (None, "", "none"):
         return NullDetector()
     if spec == "buildabot":
         path = Path("models/buildabot/units_M_480x352.onnx")
         if not path.exists():
             raise FileNotFoundError(f"{path} not found; run `python -m crbot fetch-models` first")
-        return OnnxEndToEndDetector.buildabot(path, min_conf=min_conf)
+        return OnnxEndToEndDetector.buildabot(path, arena=arena, min_conf=min_conf)
     path = Path(spec)
     if not path.exists():
         raise FileNotFoundError(path)
@@ -197,7 +215,7 @@ def load_detector(spec: Optional[str], arena_crop: Optional[Rect] = None,
         names_file = path.with_suffix(".names.json")
         if names_file.exists():
             names = json.loads(names_file.read_text(encoding="utf-8"))
-            crop = arena_crop or Rect(0.0, 0.0, 1.0, 1.0)
-            return OnnxEndToEndDetector(path, names, crop=crop, min_conf=min_conf)
-        return OnnxEndToEndDetector.buildabot(path, min_conf=min_conf)
+            return OnnxEndToEndDetector(path, names, crop=arena_crop or Rect(0.0, 0.0, 1.0, 1.0),
+                                        min_conf=min_conf)
+        return OnnxEndToEndDetector.buildabot(path, arena=arena, min_conf=min_conf)
     return UltralyticsDetector(path, crop=arena_crop, min_conf=min_conf, device=device)
